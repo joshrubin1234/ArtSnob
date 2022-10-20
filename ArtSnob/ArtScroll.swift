@@ -7,57 +7,94 @@
 
 import SwiftUI
 
+var impressionistList: [FlashCard] = [
+    FlashCard(
+        description: "Impression, Sunrise Claude Monet ; 1872 Musée Marmottan Monet in Paris, France", name: "sunriseImpression"
+    ),
+    FlashCard(
+        description: "Luncheon Of The Boating Party/ Pierre-Auguste Renoir 1880 (Located in the Phillips Collection in Washington DC)" , name: "pierreImpression"
+    ),
+    FlashCard(
+        description: "A Cotton Office In New Orleans/ Edgar Degas 1873 Location: Museum in Pau, France" , name: "cottonImpression"
+    )
+    
+]
+
+var nihlistList: [FlashCard] = [
+    FlashCard(
+        description: "nihlist post-modernest nihlist post-modernAYYYYY", name: "nihlist"
+    ),
+    FlashCard(
+        description: "nihlist post-modernest nihlist post-modernAYYYYY" , name: "nihlist"
+    ),
+    FlashCard(
+        description: "nihlist post-modernest nihlist post-modernAYYYYY" , name: "nihlist"
+    )
+    
+]
+
+var cheaList: [FlashCard] = [
+    FlashCard(
+        description: "chea chicky cheea chicky chicky chea chea ", name: "motherfuckin chea"
+    ),
+    FlashCard(
+        description: "chea chicky cheea chicky chicky chea chea " , name: "motherfuckin chea"
+    ),
+    FlashCard(
+        description: "chea chicky cheea chicky chicky chea chea " , name: "motherfuckin chea"
+    )
+]
+
+var masterList: [[FlashCard]] = []
+
+struct FlashCard {
+    var description = ""
+    var name = ""
+}
+
+extension FlashCard: Equatable {
+    static func == (lhs: FlashCard, rhs: FlashCard) -> Bool {
+        if(lhs.name == rhs.name && lhs.description == rhs.description){
+            return true
+        }
+        return false
+            
+    }
+}
+
+    
+
 struct ArtScroll: View {
-    var preRenaissanceList: [String] = ["pre", "pre"]
-    var earlyRenaissanceList: [String] = ["ear", "ear"]
-    e m
+   
     @State var list: [String] = []
     
     var body: some View {
         
         ScrollView {
-            HStack{
-                if(!list.contains(preRenaissanceList)){
-                    Button(action: {
-                        list.append(contentsOf: preRenaissanceList);print(list);
-                    },label: {
-                        Text("Pre-renissance")
-                    })
+            
+            VStack {
+                HStack{
+                    Spacer()
+                        Button(action: {
+                            if (!masterList.contains(impressionistList)){
+                                masterList.append(impressionistList)
+                            } else {
+                                masterList.removeAll(where: {$0 == impressionistList})
+                            }
+                        }, label: {
+                            Text("Impressionism")
+                        }
+                    )
                 }
-                else{
-                    
-                    Button(action: {
-                        list = list.filter{!preRenaissanceList.contains($0)};print(list)
-                    },label: {
-                        Text("Pre-renissance")
-                    })
-                }
-                if(!list.contains(earlyRenaissanceList)){
-                    Button(action: {
-                        list.append(contentsOf: earlyRenaissanceList);print(list);
-                    },label: {
-                        Text("early-renissance")
-                    })
-                }
-                else{
-                    Button(action: {
-                        list = list.filter{!earlyRenaissanceList.contains($0)};print(list)
-                    },label: {
-                        Text("early-renissance")
-                    })
-                }
-                
-
             }
+            .padding()
         }
-        .padding()
-        
+    }
+    
+    struct ArtScroll_Previews: PreviewProvider {
+        static var previews: some View {
+            ArtScroll()
+        }
     }
 }
 
-struct ArtScroll_Previews: PreviewProvider {
-    static var previews: some View {
-        ArtScroll()
-        
-    }
-}

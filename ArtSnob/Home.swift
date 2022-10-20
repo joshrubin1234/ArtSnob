@@ -31,7 +31,7 @@ struct Home: View {
                     }
                     Spacer()
                 }
-                Spacer() 
+                Spacer()
             }
         
         .padding()
