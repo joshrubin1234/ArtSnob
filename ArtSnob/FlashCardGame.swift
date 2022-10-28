@@ -21,8 +21,8 @@ struct FlashCardGame: View {
 //                Text("->")
 //            })
 //
-            var list = masterList[bigCounter]
-            var element = list[counter]
+            let list = masterList[bigCounter]
+            let element = list[counter]
             Image(element.name).resizable().scaledToFit()
             
             Button(action: {
