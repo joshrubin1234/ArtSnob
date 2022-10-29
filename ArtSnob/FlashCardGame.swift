@@ -8,50 +8,58 @@
 import SwiftUI
 
 struct FlashCardGame: View {
-    @State private var bigCounter = 0
     @State private var counter = 0
+    
     var body: some View {
     
         HStack{
-//            Button(action: masterList.forEach{ list in
-//                list.forEach{ flashcard in
-//                    Image(flashcard.name).resizable().scaledToFit()
-//                }
-//            }, label: {
-//                Text("->")
-//            })
-//
-            let list = masterList[bigCounter]
-            let element = list[counter]
-            Image(element.name).resizable().scaledToFit()
+            
             
             Button(action: {
-                if counter == list.count-1 && bigCounter < masterList.count-1{
-                    counter = -1
-                    bigCounter = bigCounter + 1
-                    print("counter: ", counter)
+                if counter > 0{
+                    counter = counter - 1
+        
                 }
-                if bigCounter == masterList.count-1 && counter == list.count-1{
-                    bigCounter = 0
-                    counter = -1
+                else{
+                    counter = masterList.count
+                    counter = counter - 1
                 }
                 
+                
+                print("masterlist: ", masterList.count)
+                print("counter: ", counter)
+    
+              
+
+            }, label: {
+                Image("leftArrow").resizable().scaledToFit().frame(width:100).frame(height: 100)
+            })
+            
+            
+            let flashCard = masterList[counter]
+            Image(flashCard.name).resizable().scaledToFit()
+            
+            
+            
+            Button(action: {
+                if counter == masterList.count-1{
+                    counter = -1
+        
+                }
                 counter = counter + 1
                 
                 print("masterlist: ", masterList.count)
                 print("counter: ", counter)
-                print("bigCounter: ", bigCounter)
-                print("list size: ", list.count)
-                
+    
+              
 
             }, label: {
-                Text("->")
-            })
-        
+                Image("rightArrow").resizable().scaledToFit().frame(width: 100).frame(height: 100)
             
-        }
+            
+        })
       
-       
+                   }
     }
 }
 

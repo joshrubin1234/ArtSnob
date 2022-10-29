@@ -54,7 +54,7 @@ var byzantineList: [FlashCard] = [
    
 ]
 
-var masterList: [[FlashCard]] = []
+var masterList: [FlashCard] = []
 
 struct FlashCard {
     var description = ""
@@ -91,9 +91,11 @@ struct ArtScroll: View {
                     Spacer()
                         Button(action: {
                             if(!masterList.contains(impressionistList)){
-                                masterList.append(impressionistList);print(masterList)
+                                masterList.append(contentsOf: impressionistList)
                             } else {
-                                masterList.removeAll(where: {$0 == impressionistList});print(masterList)
+                                masterList = masterList.filter {
+                                    !impressionistList.contains($0)
+                                }
                             }
                         }, label: {
                             Text("Impressionism")
@@ -102,9 +104,11 @@ struct ArtScroll: View {
                     Spacer()
                     Button(action: {
                         if(!masterList.contains(earlyRenaisanceList)){
-                            masterList.append(earlyRenaisanceList);print(masterList)
+                            masterList.append(contentsOf: earlyRenaisanceList)
                         } else {
-                            masterList.removeAll(where: {$0 == earlyRenaisanceList});print(masterList)
+                            masterList = masterList.filter {
+                                !earlyRenaisanceList.contains($0)
+                            }
                         }
                     }, label: {
                         Text("earlyRenaisanceList")
@@ -113,9 +117,11 @@ struct ArtScroll: View {
                     Spacer()
                     Button(action: {
                         if(!masterList.contains(byzantineList)){
-                            masterList.append(byzantineList);print(masterList)
+                            masterList.append(contentsOf: byzantineList)
                         } else {
-                            masterList.removeAll(where: {$0 == byzantineList});print(masterList)
+                            masterList = masterList.filter{
+                                !byzantineList.contains($0)
+                            }
                         }
                     }, label: {
                         Text("Byzantine")
