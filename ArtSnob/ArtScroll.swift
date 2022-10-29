@@ -17,7 +17,7 @@ var impressionistList: [FlashCard] = [
     FlashCard(
         description: "A Cotton Office In New Orleans/ Edgar Degas 1873 Location: Museum in Pau, France" , name: "impressionCotton"
     ),
-    FlashCard(description: "Paris Street In Rainy Weather/by Gustave Caillebotte 1877 Loc: The Art Institute of Chicago", name: "impressionGustave"
+    FlashCard(description: "Paris Street In Rainy Weather/by Gustave Caillebotte 1877 Loc: The Art Institute of Chicago", name: "impressionGustave" 
     ),
     FlashCard(description: "Dance At The Moulin De La Galette/Pierre-Auguste Renoir 1876 Location: Private Collection", name: "impressionAuguste"
     ),
@@ -35,12 +35,12 @@ var impressionistList: [FlashCard] = [
 ]
 
 var earlyRenaisanceList: [FlashCard] = [
-    FlashCard(description: "no description", name: "earlRenModanna" ),
+    FlashCard(description: "no description", name: "earlRenMadonna" ),
     FlashCard(description: "no description", name: "earlRenVenus" ),
     FlashCard(description: "no description", name: "earlRenPrimavera" ),
     FlashCard(description: "no description", name: "earlRenCapella" ),
     FlashCard(description: "no description", name: "earlRenAngelico" ),
-    FlashCard(description: "no description", name: "earlRenPiero" ),
+    FlashCard(description: "no description", name: "earlRenPierro" ),
     FlashCard(description: "no description", name: "earlRenGeorge" ),
     FlashCard(description: "no description", name: "earlRenMessina" ),
     FlashCard(description: "no description", name: "earlRenChrist" ),
@@ -86,8 +86,8 @@ struct ArtScroll: View {
                                 FlashCardGame()){
                     Text("FlashcardGame")
                 }
+                Spacer()
                 HStack{
-                    
                     Spacer()
                         Button(action: {
                             if(!masterList.contains(impressionistList)){
@@ -121,7 +121,7 @@ struct ArtScroll: View {
                         Text("Byzantine")
                     }
                 )
-
+                Spacer()
                     
                 }
                             }

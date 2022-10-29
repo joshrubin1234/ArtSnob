@@ -26,11 +26,23 @@ struct FlashCardGame: View {
             Image(element.name).resizable().scaledToFit()
             
             Button(action: {
-                if counter == list.count - 1{
-                    counter = 0
-                    bigCounter += bigCounter
+                if counter == list.count-1 && bigCounter < masterList.count-1{
+                    counter = -1
+                    bigCounter = bigCounter + 1
+                    print("counter: ", counter)
                 }
+                if bigCounter == masterList.count-1 && counter == list.count-1{
+                    bigCounter = 0
+                    counter = -1
+                }
+                
                 counter = counter + 1
+                
+                print("masterlist: ", masterList.count)
+                print("counter: ", counter)
+                print("bigCounter: ", bigCounter)
+                print("list size: ", list.count)
+                
 
             }, label: {
                 Text("->")
