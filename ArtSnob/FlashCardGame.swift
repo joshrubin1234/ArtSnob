@@ -9,9 +9,14 @@ import SwiftUI
 
 struct FlashCardGame: View {
     @State private var counter = 0
+    @State private var degrees = 0.0
+    @State private var flipped = false
     
+      
+    
+
     var body: some View {
-    
+        
         HStack{
             
             
@@ -37,7 +42,18 @@ struct FlashCardGame: View {
             
             
             let flashCard = masterList[counter]
-            Image(flashCard.name).resizable().scaledToFit()
+            
+            
+   
+                  Image(flashCard.name).resizable().scaledToFit()
+                
+        
+                    
+      
+            
+            
+//            Image(flashCard.name).resizable().scaledToFit().rotation3DEffect(.degrees(degrees), axis: (x: 0, y: 1, z: 0))
+//
             
             
             
@@ -66,5 +82,6 @@ struct FlashCardGame: View {
 struct FlashCardGame_Previews: PreviewProvider {
     static var previews: some View {
         FlashCardGame()
+       
     }
 }

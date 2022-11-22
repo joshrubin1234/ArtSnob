@@ -17,7 +17,7 @@ var impressionistList: [FlashCard] = [
     FlashCard(
         description: "A Cotton Office In New Orleans/ Edgar Degas 1873 Location: Museum in Pau, France" , name: "impressionCotton"
     ),
-    FlashCard(description: "Paris Street In Rainy Weather/by Gustave Caillebotte 1877 Loc: The Art Institute of Chicago", name: "impressionGustave" 
+    FlashCard(description: "Paris Street In Rainy Weather/by Gustave Caillebotte 1877 Loc: The Art Institute of Chicago", name: "impressionGustave"
     ),
     FlashCard(description: "Dance At The Moulin De La Galette/Pierre-Auguste Renoir 1876 Location: Private Collection", name: "impressionAuguste"
     ),
@@ -31,7 +31,7 @@ var impressionistList: [FlashCard] = [
     FlashCard(description: "Gare Saint-Lazare (Monet, 1877) Location: National Gallery Of Art Location: Cambridge Massachussets", name: "impressionMass"),
     FlashCard(description: "The Coiffure by Mary Cassatt, 1890 Location: National Gallery of Art , Washington, DC", name: "impressionDC" ),
     FlashCard(description: "The Absinthe Drinker /Degas 1876 Location: Musée d'Orsay , Paris, France", name: "impressionDrinker")
-    
+
 ]
 
 var earlyRenaisanceList: [FlashCard] = [
@@ -47,11 +47,11 @@ var earlyRenaisanceList: [FlashCard] = [
     FlashCard(description: "no description", name: "earlRenAgony" ),
     FlashCard(description: "no description", name: "earlRenPaolo" )
     ]
-    
+
 
 
 var byzantineList: [FlashCard] = [
-   
+
 ]
 
 var masterList: [FlashCard] = []
@@ -60,6 +60,8 @@ struct FlashCard {
     var description = ""
     var name = ""
 }
+
+
 
 extension FlashCard: Equatable {
     static func == (lhs: FlashCard, rhs: FlashCard) -> Bool {
@@ -85,6 +87,10 @@ struct ArtScroll: View {
                 NavigationLink(destination:
                                 FlashCardGame()){
                     Text("FlashcardGame")
+                }
+                NavigationLink(destination:
+                                TestFlash()){
+                    Text("TestFlash")
                 }
                 Spacer()
                 HStack{
