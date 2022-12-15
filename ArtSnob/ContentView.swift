@@ -20,11 +20,13 @@ struct ContentView: View {
                     Text("Shall We?")
                 }
             }
-        }
+        }.onAppear(perform: {
+            playSound(sound: "zmusic", type: "wav")
+        })
         .padding()
     }
-}
 
+}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

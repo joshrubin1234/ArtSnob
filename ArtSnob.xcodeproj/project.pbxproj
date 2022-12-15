@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37A4BDD229284361001C188A /* TestFlash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A4BDD129284361001C188A /* TestFlash.swift */; };
+		379F55DD293EF995006F3DA0 /* slideAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379F55DC293EF995006F3DA0 /* slideAnimator.swift */; };
 		37A8610E28F74AAD006B48A4 /* ArtSnobApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A8610D28F74AAD006B48A4 /* ArtSnobApp.swift */; };
 		37A8611028F74AAD006B48A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A8610F28F74AAD006B48A4 /* ContentView.swift */; };
 		37A8611228F74AB0006B48A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37A8611128F74AB0006B48A4 /* Assets.xcassets */; };
@@ -15,10 +15,11 @@
 		37A8611C28F762F0006B48A4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A8611B28F762F0006B48A4 /* Home.swift */; };
 		37A8611E28F76D08006B48A4 /* ArtScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A8611D28F76D08006B48A4 /* ArtScroll.swift */; };
 		37A8612029038D43006B48A4 /* FlashCardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A8611F29038D43006B48A4 /* FlashCardGame.swift */; };
+		37C73D522932849D001F0309 /* playSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C73D512932849D001F0309 /* playSound.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		37A4BDD129284361001C188A /* TestFlash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFlash.swift; sourceTree = "<group>"; };
+		379F55DC293EF995006F3DA0 /* slideAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slideAnimator.swift; sourceTree = "<group>"; };
 		37A8610A28F74AAD006B48A4 /* ArtSnob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtSnob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A8610D28F74AAD006B48A4 /* ArtSnobApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtSnobApp.swift; sourceTree = "<group>"; };
 		37A8610F28F74AAD006B48A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,6 +28,7 @@
 		37A8611B28F762F0006B48A4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		37A8611D28F76D08006B48A4 /* ArtScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtScroll.swift; sourceTree = "<group>"; };
 		37A8611F29038D43006B48A4 /* FlashCardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardGame.swift; sourceTree = "<group>"; };
+		37C73D512932849D001F0309 /* playSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playSound.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +61,9 @@
 		37A8610C28F74AAD006B48A4 /* ArtSnob */ = {
 			isa = PBXGroup;
 			children = (
-				37A4BDD129284361001C188A /* TestFlash.swift */,
+				379F55DC293EF995006F3DA0 /* slideAnimator.swift */,
 				37A8610D28F74AAD006B48A4 /* ArtSnobApp.swift */,
+				37C73D512932849D001F0309 /* playSound.swift */,
 				37A8610F28F74AAD006B48A4 /* ContentView.swift */,
 				37A8611B28F762F0006B48A4 /* Home.swift */,
 				37A8611D28F76D08006B48A4 /* ArtScroll.swift */,
@@ -150,8 +153,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				37A8611E28F76D08006B48A4 /* ArtScroll.swift in Sources */,
+				37C73D522932849D001F0309 /* playSound.swift in Sources */,
+				379F55DD293EF995006F3DA0 /* slideAnimator.swift in Sources */,
 				37A8611028F74AAD006B48A4 /* ContentView.swift in Sources */,
-				37A4BDD229284361001C188A /* TestFlash.swift in Sources */,
 				37A8612029038D43006B48A4 /* FlashCardGame.swift in Sources */,
 				37A8611C28F762F0006B48A4 /* Home.swift in Sources */,
 				37A8610E28F74AAD006B48A4 /* ArtSnobApp.swift in Sources */,

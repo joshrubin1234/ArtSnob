@@ -76,29 +76,62 @@ extension FlashCard: Equatable {
     
 
 struct ArtScroll: View {
-   
-    @State var list: [String] = []
+//    @State private var showingAlert = masterList.isEmpty
+    @State var switchView: Bool = false
+    @State var showAlert: Bool = false
+    @State private var showFlash = false
+    @State var masList = masterList
+    @State private var path = NavigationPath()
     
+    @State var list: [String] = []
     var body: some View {
-        
         ScrollView {
-            
             VStack {
-                NavigationLink(destination:
-                                FlashCardGame()){
-                    Text("FlashcardGame")
-                }
-                NavigationLink(destination:
-                                TestFlash()){
-                    Text("TestFlash")
-                }
+                
+//                NavigationLink(destination: slideAnimator()) {
+//                                Text("slide")
+//                }
+                
+                
+                
+                NavigationLink(destination: FlashCardGame()) {
+                                Text("FlashGame")
+                }.disabled(masList.isEmpty)
+                
+        
+           
+                
+//                Button("FlashCardGame") {
+//                    if masterList.isEmpty{
+//                        showingAlert = true
+//                    }
+//                    else{
+//
+//                    }
+//                }
+//                        .alert(isPresented:$showingAlert) {
+//                            Alert(
+//                                title: Text("Pick a cetegory"),
+//                                message: Text(""),
+//                                dismissButton: .destructive(Text("Okay")) {
+//                                    print("Deleting...")
+//                                }
+//                            )
+//                        }
+//
+              
                 Spacer()
                 HStack{
                     Spacer()
                         Button(action: {
                             if(!masterList.contains(impressionistList)){
                                 masterList.append(contentsOf: impressionistList)
+                                masList.append(contentsOf: impressionistList)
+                                print(masterList.count)
                             } else {
+                                masList = masList.filter{
+                                    !impressionistList.contains($0)
+                                }
                                 masterList = masterList.filter {
                                     !impressionistList.contains($0)
                                 }
@@ -106,12 +139,18 @@ struct ArtScroll: View {
                         }, label: {
                             Text("Impressionism")
                         }
-                    )
+                    ).onAppear(perform: {
+                            playSound(sound: "zmusic", type: "mp3")
+                        })
                     Spacer()
                     Button(action: {
                         if(!masterList.contains(earlyRenaisanceList)){
                             masterList.append(contentsOf: earlyRenaisanceList)
+                            masList.append(contentsOf: earlyRenaisanceList)
                         } else {
+                            masList = masList.filter{
+                                !earlyRenaisanceList.contains($0)
+                            }
                             masterList = masterList.filter {
                                 !earlyRenaisanceList.contains($0)
                             }
@@ -124,7 +163,11 @@ struct ArtScroll: View {
                     Button(action: {
                         if(!masterList.contains(byzantineList)){
                             masterList.append(contentsOf: byzantineList)
+                            masList.append(contentsOf: byzantineList)
                         } else {
+                            masList = masList.filter{
+                                !byzantineList.contains($0)
+                            }
                             masterList = masterList.filter{
                                 !byzantineList.contains($0)
                             }
@@ -140,6 +183,7 @@ struct ArtScroll: View {
             .padding()
         }
     }
+
     
     struct ArtScroll_Previews: PreviewProvider {
         static var previews: some View {
